@@ -1,0 +1,27 @@
+{
+    "dev": {
+        "app_function": "appIII.fIII",
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "exclude": [
+            "boto3",
+            "dateutil",
+            "botocore",
+            "s3transfer",
+            "concurrent"
+        ],
+        "project_name": "lambda3project",
+        
+        "runtime": "python3.10",
+        "s3_bucket": "zappa-bls68hpfj",
+        "apigateway_enabled": false,
+        "manage_roles": false,
+        "role_name": "LabRole",
+        "events": [
+            {
+                "function": "appIII.fIII",
+                "expression": "cron(35 17 * * ? *)"
+            }
+        ]
+    }
+}
