@@ -89,7 +89,14 @@ Cleaning rules apply:
 - Remove empty rows.Final
 - 
 ### Output (CSV/Athena):
-DateSourceTitleContentCategory2023-10-01Site AMarket TrendsText...Finance2023-10-01Site BTech ReleaseText...Tech
+
+| Titular | Categoria | predicted_categoria |
+| :--- | :--- | :--- |
+| Abriendo mercados: transformando la economia regional | Contenido patrocinado | Contenido patrocinado |
+| Aviajar colombia s.a.s. denuncia uso inadecuado de su nombre | Contenido patrocinado | Contenido patrocinado |
+| Siga en vivo la ceremonia de los premios portafolio 2024 | Economia | Economia |
+| Vea y descargue aqui la edicion digital de portafolio fin de semana | Economia | Opinion/analisis |
+| Vea y descargue aqui la edicion digital de portafolio fin de semana | Economia | Opinion/analisis |
 
 This standardized format allows the Jupyter Notebook to immediately begin Feature Engineering and Model Training.
 
