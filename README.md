@@ -87,7 +87,7 @@ Cleaning rules apply:
 - Strip HTML tags.
 - Normalize date to YYYY-MM-DD.
 - Remove empty rows.Final
-- 
+
 ### Output (CSV/Athena):
 
 | Titular | Categoria | predicted_categoria |
