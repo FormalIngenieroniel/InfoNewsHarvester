@@ -51,67 +51,66 @@ The project is divided into four main Lambda functions, identified by Roman nume
 
 ### Lambda IV (Loading & Aggregation)
 
-- Role: The "Loader.
-- "Functionality:
-
-- Aggregates processed files.
-- Interfaces with AWS Glue to update the Data Catalog.
-- Prepares the final CSV output accessible via Amazon Athena or direct download for analysis.
+- **Role:** The Loader.
+- **Functionality:**
+  - Aggregates processed files.
+  - Interfaces with AWS Glue to update the Data Catalog.
+  - Prepares the final CSV output accessible via Amazon Athena or direct download for analysis.
 
 ## 🧩 How It Works
 
-Trigger: The pipeline is initiated (via EventBridge schedule or manual trigger).
+**Trigger:** The pipeline is initiated (via EventBridge schedule or manual trigger).
 
-Scraping Phase: Lambda I and Lambda II execute in parallel to fetch the latest news from their respective sources.
+**Scraping Phase:** Lambda I and Lambda II execute in parallel to fetch the latest news from their respective sources.
 
-Storage: Raw data is saved to S3.
+**Storage:** Raw data is saved to S3.
 
-Processing Phase: Lambda III reads the raw S3 data, applies text cleaning, and structures the information.
+**Processing Phase:** Lambda III reads the raw S3 data, applies text cleaning, and structures the information.
 
-Cataloging: Lambda IV ensures the data is recognized by the AWS Glue Crawler.
+**Cataloging:** Lambda IV ensures the data is recognized by the AWS Glue Crawler.
 
-Analysis:
+**Analysis:**
 
-The user opens the provided Jupyter Notebook.
-
-Connects to the S3 bucket or Athena.
-
-Loads the CSV data to train Prediction Models (e.g., trend forecasting or sentiment analysis).
+- The user opens the provided Jupyter Notebook.
+- Connects to the S3 bucket or Athena.
+- Loads the CSV data to train Prediction Models (e.g., trend forecasting or sentiment analysis).
 
 ## 🧠 Data Flow & Analysis
 
 After the Lambda functions complete their execution, the data flow results in a clean dataset.
 
-Raw Input (Web):
+### Raw Input (Web):
 Unstructured HTML, mixed formatting, advertisements, variable date formats.
-Transformation (Lambda III):
+
+### Transformation (Lambda III):
 Cleaning rules apply:
-Strip HTML tags.
-Normalize date to YYYY-MM-DD.
-Remove empty rows.Final 
-Output (CSV/Athena):
+- Strip HTML tags.
+- Normalize date to YYYY-MM-DD.
+- Remove empty rows.Final
+- 
+### Output (CSV/Athena):
 DateSourceTitleContentCategory2023-10-01Site AMarket TrendsText...Finance2023-10-01Site BTech ReleaseText...Tech
 
 This standardized format allows the Jupyter Notebook to immediately begin Feature Engineering and Model Training.
 
 ## 🔧 Tech Stack & Requirements
 
-Cloud Provider: Amazon Web Services (AWS)
-Compute: AWS Lambda (Python Runtime)
-Storage: Amazon S3 (Simple Storage Service)
-ETL & Query: AWS Glue, Amazon Athena
-Local Analysis: Jupyter Notebook / Python Pandas
-Libraries: boto3, requests, pandas, beautifulsoup4 (or selenium depending on implementation)
+- **Cloud Provider:** Amazon Web Services (AWS)
+- **Compute:** AWS Lambda (Python Runtime)
+- **Storage:** Amazon S3 (Simple Storage Service)
+- **ETL & Query:** AWS Glue, Amazon Athena
+- **Local Analysis:** Jupyter Notebook / Python Pandas
+- **Libraries:** boto3, requests, pandas, beautifulsoup4 (or selenium depending on implementation)
 
 
 ## 📊 Future Improvements
 
-🔄 Sentiment Analysis: Integrate AWS Comprehend to score the sentiment of news articles automatically.
-📈 Dashboarding: Connect Amazon QuickSight to visualize news frequency and topics.
-🤖 Automated Alerts: Use SNS to notify when specific keywords appear in the news.
-🌍 More Sources: Scale the scraper to include international news outlets.
+- 🔄 **Sentiment Analysis:** Integrate AWS Comprehend to score the sentiment of news articles automatically.
+- 📈 **Dashboarding:** Connect Amazon QuickSight to visualize news frequency and topics.
+- 🤖 **Automated Alerts:** Use SNS to notify when specific keywords appear in the news.
+- 🌍 **More Sources:** Scale the scraper to include international news outlets.
 
 ## 👨‍💻 Author
 
-Developed by [FormalIngenieroniel]This project is hosted at: InfoNewsHarvester Repository
+Developed by Daniel Bernal
 
