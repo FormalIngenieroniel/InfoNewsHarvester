@@ -12,11 +12,9 @@ Cloud Computing allows for on-demand delivery of IT resources over the Internet.
 
 In this project, the InfoNewsHarvester acts as an automated data agent:
 
-Perception → Scripts visit web pages to identify headlines and content.
-
-Processing → Raw text is converted into structured data (Dates, Titles, Bodies).
-
-Action → Data is consolidated into CSV format for predictive modeling.
+- Perception → Scripts visit web pages to identify headlines and content.
+- Processing → Raw text is converted into structured data (Dates, Titles, Bodies).
+- Action → Data is consolidated into CSV format for predictive modeling.
 
 This structure allows for a scalable, cost-effective system that requires no server management.
 
