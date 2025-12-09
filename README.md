@@ -6,9 +6,9 @@ This project implements a Serverless Data Engineering Pipeline designed to extra
 
 Cloud Computing allows for on-demand delivery of IT resources over the Internet. Within this project, we utilize a Serverless architecture to build an efficient ETL (Extract, Transform, Load) pipeline:
 
-- Extract: Lambda functions trigger to scrape raw HTML data from target news websites.
-- Transform: Data is cleaned, parsed, and structured into a usable format.
-- Load: The processed data is stored in a Data Lake (S3) and cataloged (Glue) for analysis.
+- **Extract:** Lambda functions trigger to scrape raw HTML data from target news websites.
+- **Transform:** Data is cleaned, parsed, and structured into a usable format.
+- **Load:** The processed data is stored in a Data Lake (S3) and cataloged (Glue) for analysis.
 
 In this project, the InfoNewsHarvester acts as an automated data agent:
 
@@ -20,13 +20,13 @@ This structure allows for a scalable, cost-effective system that requires no ser
 
 ## 🚀 Features
 
-- ☁️ AWS Serverless Architecture: Built entirely on AWS Lambda, S3, Glue, and Athena.
-- 🕷️ Multi-Source Scraping: Extracts news from two distinct websites simultaneously.
-- 🗂️ Structured Data Storage: Saves raw and processed data in Amazon S3 buckets.
-- 🔢 Sequential Processing: Utilizes four distinct Lambda functions (I, II, III, IV) for modular execution.
-- 📊 Data Cataloging: Integrated with AWS Glue and Athena for SQL-like querying.
-- 📉 Machine Learning Ready: Generates a clean CSV format optimized for Jupyter Notebooks and predictive models.
-- 🤖 Automated Workflow: From raw HTML to analytical dataset without manual intervention.
+- ☁️ **AWS Serverless Architecture:** Built entirely on AWS Lambda, S3, Glue, and Athena.
+- 🕷️ **Multi-Source Scraping:** Extracts news from two distinct websites simultaneously.
+- 🗂️ **Structured Data Storage:** Saves raw and processed data in Amazon S3 buckets.
+- 🔢 **Sequential Processing:** Utilizes four distinct Lambda functions (I, II, III, IV) for modular execution.
+- 📊 **Data Cataloging:** Integrated with AWS Glue and Athena for SQL-like querying.
+- 📉 **Machine Learning Ready:** Generates a clean CSV format optimized for Jupyter Notebooks and predictive models.
+- 🤖 **Automated Workflow:** From raw HTML to analytical dataset without manual intervention.
 
 ## 💻 Code Workflow
 
@@ -34,18 +34,16 @@ The project is divided into four main Lambda functions, identified by Roman nume
 
 ### Lambda I & Lambda II (Extraction)
 
-- Role: The "Harvesters".
-- Functionality:
-
+- **Role:** The Harvesters.
+- **Functionality:**
   - Connect to the two specific target news websites.
   - Scrape the HTML content (headlines, dates, article bodies).
   - Store the raw data directly into an S3 "Landing Zone" bucket.
 
 ### Lambda III (Transformation)
 
-- Role: The "Processor.
-- "Functionality:
-
+- **Role:** The Processor.
+- **Functionality:**
   - Triggered after extraction.
   - Cleans the raw text (removing HTML tags, formatting dates).
   - Normalizes the data structure to ensure consistency between the two different sources.
